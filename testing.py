@@ -201,8 +201,18 @@ else:
             pred_vals = np.asarray(predictions).transopose
             np.savetxt(pred_folder+'/'+pred_file+".txt",predictions,fmt='%f')
             
-            fig, ax = plt.figure()
             
-            img = plt.imshow(pred_vals,cmap="YlGnBu")
+            # --------- ploting the prediction of file with same name ---------#
+            fig, ax = plt.subplots(figsize=(40,40))
+            ax.set_title(pred_file, fontsize=40)
+            ax.set_yticks(np.arange(len(config_audio.class_names)))
+            ax.set_yticklabels(config_audio.class_names,fontsize=20)
+
+            plt.xticks(fontsize=20)
+
+            img = ax.imshow(pred_vals,aspect='auto')
+            fig.savefig(pred_folder+'/'+pred_file+'.png')
+            img = plt.imshow(pred_vals,cmap="YlGnBu",aspect='auto')
             
-            title_obj
+            
+            
