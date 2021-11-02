@@ -198,7 +198,7 @@ else:
                 os.makedirs(pred_folder,0o775)
             except FileExistsError:
                 print('already exists')
-            pred_vals = np.asarray(predictions).transopose
+            pred_vals = np.asarray(predictions).transpose()
             np.savetxt(pred_folder+'/'+pred_file+".txt",predictions,fmt='%f')
             
             
