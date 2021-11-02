@@ -211,8 +211,8 @@ else:
             plt.xticks(fontsize=20)
 
             img = ax.imshow(pred_vals,aspect='auto')
+            img = plt.imshow(pred_vals,aspect='auto')
             fig.savefig(pred_folder+'/'+pred_file+'.png')
-            img = plt.imshow(pred_vals,cmap="YlGnBu",aspect='auto')
             
             
             
